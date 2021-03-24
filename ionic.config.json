@@ -1,0 +1,7 @@
+{
+  "name": "smart_city_Alert",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

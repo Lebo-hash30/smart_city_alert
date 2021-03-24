@@ -1,0 +1,33 @@
+.content{
+  margin-top:40%;
+}
+.service {
+  display: flexbox;
+  grid-template-columns: repeat(2, 50%);
+  height: auto;
+  
+  
+}
+
+.services_content{
+  width: 80px;
+  height: 80px;
+  
+  border: solid steelblue 2px;
+  display: inline-block;
+  margin-left: 10%;
+  
+}
+
+i {
+  text-align: center;
+  padding-left: 20px;
+  padding-top: 25px;
+  font-size: 25px;
+}
+
+h6{
+  font-size: 10px;
+  padding-top: 10px;
+  line-height: 18px;
+}

@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons> 
+    <ion-title  style="text-align: center;">Report case</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <div *ngIf="problems" >
+    <ion-item>
+      <h3 style="text-align: center">What problems are you facing ?</h3>
+    </ion-item>
+
+    <div class="services">
+      <div class="services_content" (click)="services('Water pipe burst')" >
+        <i class="fas fa-exclamation-triangle"></i>
+        <h6>Water pipe burst</h6>
+      </div>
+
+      <div class="services_content" (click)="services('Sewerage')">
+        <i class="fas fa-exclamation-triangle"></i>
+        <h6>Sewerage</h6>
+      </div>
+
+      <div class="services_content" (click)="services('Electrical issues')">
+        <i class="fas fa-exclamation-triangle"></i>
+        <h6>Electrical</h6>
+      </div>
+
+      <div class="services_content" (click)="services('Potholes')">
+        <i class="fas fa-exclamation-triangle"></i>
+        <h6>Potholes</h6>
+      </div>
+
+      <div class="services_content" (click)="services('Illegal dumping')">
+        <i class="fas fa-exclamation-triangle"></i>
+        <h6>Illegal dumping</h6>
+      </div>
+
+    </div>
+  </div>
+
+  <div *ngIf="duration" class="content">
+    <h3 style="text-align: center">
+      How long has the problem been in perstience ?
+    </h3>
+    <ion-item (click)="duration_answer('1 day')"> 1 day </ion-item>
+    <ion-item (click)="duration_answer('1 day +')">1 day + </ion-item>
+    <ion-item (click)="duration_answer('Week')"> Week </ion-item>
+    <ion-item (click)="duration_answer('7 day +')"> 7 days + </ion-item>
+  </div>
+
+  <div *ngIf="severity_problem" class="content">
+    <h3 style="text-align: center">How severe is the problem ?</h3>
+    <ion-item (click)="severe('High')"> High </ion-item>
+    <ion-item (click)="severe('Meduim')">Meduim </ion-item>
+
+    <ion-item (click)="severe('Low')"> Low </ion-item>
+  </div>
+
+  <div class="mb-3"  *ngIf="comment" class="content">
+    <textarea  [(ngModel)]="description"
+      class="form-control"
+      placeholder="Please provide additional comment to let us better understand the isseus"
+      required
+    ></textarea>
+
+    <ion-button (click)="submitReport()">Submit report </ion-button>
+
+    <!-- fab placed to the (vertical) center and start -->
+    <ion-fab vertical="center" horizontal="end" slot="fixed" (click)="takePicture()" >
+      <ion-fab-button>
+        <ion-icon name="camera"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
+
+
+</ion-content>
