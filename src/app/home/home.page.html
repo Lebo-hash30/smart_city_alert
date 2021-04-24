@@ -1,187 +1,76 @@
-
-
 <ion-content>
-  <h5 style="padding-left:15px; font-family: 'Poppins', sans-serif;color: #538189"> Quick and easy way to report <br>a municipal issue <br>Spot an issue, <br>Shoot a photo <br>and Send!</h5>
-  <div class="services nt-5">
-    <div class="services_content" [routerLink] = "'/report'">
-      <i class="fas fa-exclamation-triangle"></i>
-      <h6 style="padding-top: 5%">Report case</h6>
-    </div>
+  <div class="services mt-5">
 
-    <div class="services_content"   [routerLink] = "'/facility-booking'">
-    <i class="fas fa-poll-h"></i>
-      <h6 style="padding-top: 5%">Book facility</h6>
-    </div>
-    <div class="services_content"  [routerLink] = "'/announcements'">
-  <i class="fas fa-comment-alt"></i>
-      <h6 style="padding-top: 5%">Announcements</h6>
-    </div>
+    <ion-slides pager="false" [options]="slideServices">
+      <ion-slide> <div class="services_content" [routerLink]="'/report'">
+        <i class="fas fa-exclamation-triangle"></i>
+        <h6 style="padding-top:15%;padding-left:15%;">Report case</h6>
+      </div>
+    </ion-slide>
+      <ion-slide>
+        <div class="services_content" [routerLink]="'/facility-booking'">
+          <i class="fas fa-poll-h"></i>
+          <h6 style="padding-top: 15%;padding-left:15%;">Book facility</h6>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="services_content" [routerLink]="'/announcements'">
+          <i class="fas fa-bullhorn"></i>
+          <h6 style="padding-top: 15%;padding-left:15%;">Updates</h6>
+        </div>
+      </ion-slide>
+    </ion-slides>
+   
   </div>
 
   <div class="report_issues">
-    <h1>Reported issues</h1>
-    <small>Track case update</small>
+    <h1 style="padding-left: 15px; font-family: 'Poppins', sans-serif">
+      Reported issues
+    </h1>
+    <small style="padding-left: 15px; font-family: 'Poppins', sans-serif"
+      >Track cases</small
+    >
     <small></small>
     <ion-slides pager="false" [options]="slideOpts">
-      <ion-slide>
-        <ion-card class="card">
-          <img src="../../assets/download.jpeg" />
-          <div class="status">
-            Resolved
+      <ion-slide *ngFor="let issues of issues">
+        <ion-card class="card" (click)="viewcase(issues)">
+          <img src="{{ issues.picture}}" />
+          <div *ngIf="issues.status=='pending'; else elseBlock" class="status" style="background-color: red;">
+                Pending
           </div>
+          <ng-template #elseBlock class="status" style="background-color: green;"
+            >Resolved</ng-template
+          >
           <ion-card-header>
-            <ion-card-subtitle>
-              Frances Baard Region
-            </ion-card-subtitle>
-            <ion-card-title>Water pipe burst</ion-card-title>
+            <ion-card-subtitle> Local Government Issue </ion-card-subtitle>
+            <ion-card-title>{{issues.problemType}}</ion-card-title>
           </ion-card-header>
           <ion-card-content>
-            
-           
-            <p>The most popular industrial group ever....</p>
+            <p>{{issues.comment.substring(0,20)}} ......</p>
           </ion-card-content>
         </ion-card>
       </ion-slide>
-
-      <ion-slide>
-        <ion-card class="card">
-          <img src="../../assets/download (1).jpeg" />
-
-          <div class="status" style="background-color: red;">
-           Pending
-          </div>
-          <ion-card-header>
-            <ion-card-subtitle>
-              Frances Baard Region
-            </ion-card-subtitle>
-            <ion-card-title>Electrical theft</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-           
-            <p>The most popular industrial group ever.. .</p>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-
-      <ion-slide>
-        <ion-card class="card">
-          <img src="..//..//assets/images.sewage1.jfif" />
-
-          <div class="status" style="background-color: red;">
-           Pending
-          </div>
-          <ion-card-header>
-            <ion-card-subtitle>
-              Frances Baard Region
-            </ion-card-subtitle>
-            <ion-card-title>Faulty Sewages</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-           
-            <p>The most popular industrial group ever.. .</p>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-
-      <ion-slide>
-        <ion-card class="card">
-          <img src="..//..//assets/depositphotos_43943863-stock-photo-pothole.jpg" />
-
-          <div class="status" style="background-color: red;">
-           Pending
-          </div>
-          <ion-card-header>
-            <ion-card-subtitle>
-              Frances Baard Region
-            </ion-card-subtitle>
-            <ion-card-title>Faulty Roads</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-           
-            <p>The most popular industrial group ever.. .</p>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-
-      <ion-slide>
-        <ion-card class="card">
-          <img src="..//..//assets/istockphoto-862189462-612x612.Dumping.jpg" />
-
-          <div class="status" style="background-color: red;">
-           Pending
-          </div>
-          <ion-card-header>
-            <ion-card-subtitle>
-              Frances Baard Region
-            </ion-card-subtitle>
-            <ion-card-title>Illegal Dumping</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-           
-            <p>The most popular industrial group ever.. .</p>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-
     </ion-slides>
   </div>
-
-
   <div class="government_facility">
-    <h1>Government  facility</h1>
-    <small>Any queries and bookings</small>
-    <ion-slides pager="false" [options]="slideOpts" class="card-background-page"  >
-      <ion-slide>
-        <ion-card>
-          <img src="..//..//assets/download.Mayibuye.jfif"/>
-          <div class="card-title" [routerLink] = "'/bookings'">Galeshewe</div>
-        </ion-card>
-      </ion-slide>
-  
-      <ion-slide>
-        <ion-card>
-          <img src="..//..//assets/download.William.jfif"/>
-          <div class="card-title" [routerLink] = "'/bookings1'">Kimberley</div>
-        </ion-card>
-      </ion-slide>
+    <h1 style="padding-left: 15px; font-family: 'Poppins', sans-serif">
+      Government facility
+    </h1>
+    <small style="padding-left: 15px; font-family: 'Poppins', sans-serif"
+      >Any queries and bookings</small
+    >
 
-      <ion-slide>
-        <ion-card>
-          <img src="..//..//assets/images.SMME.jfif"/>
-          <div class="card-title" [routerLink] = "'/bookings2'">Galeshewe</div>
+    <ion-slides
+      pager="false"
+      [options]="slideOpts"
+      class="card-background-page"
+    >
+      <ion-slide *ngFor="let facility of  facilities ">
+        <ion-card (click)="viewMore(facility)">
+          <img src="{{facility.center_image}}" style="height: 150px" />
+          <div class="card-title">{{facility.center_name}}</div>
         </ion-card>
       </ion-slide>
-
-      <ion-slide>
-        <ion-card>
-          <img src="..//..//assets/the-wildebeest-kuil-rock-art-centre-1.jpg"/>
-          <div class="card-title" [routerLink] = "'/bookings3'">Platfontein</div>
-        </ion-card>
-      </ion-slide>
-
-      <ion-slide>
-        <ion-card>
-          <img src="..//..//assets/images.ncSMME.jfif"/>
-          <div class="card-title" [routerLink] = "'/bookings4'">Floors</div>
-        </ion-card>
-      </ion-slide>
-
-      </ion-slides>
-  
-      
-  
-     
-  
+    </ion-slides>
   </div>
-
-
-
-  
 </ion-content>
-
-
-
-
-
-  
-         

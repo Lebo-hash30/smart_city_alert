@@ -1,5 +1,5 @@
 <ion-header >
-  <ion-toolbar  color="success">
+  <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/booking facility/"></ion-back-button>
     </ion-buttons>
@@ -9,27 +9,48 @@
 
 <ion-content>
 
+  <ion-list>
+    <div class="container mt-3">
+  
+      <div class="card"  style="width: 20rem;">
+        <img src="..//../assets/images.SMME1.jfif" class="card-img-top" alt="..." />
+        
+        <div class="card-body">
+          <h5 class="card-title">Art center</h5>
+          <h3>Description</h3>
+          <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, cum cumque vitae deserunt alias delectus
+            blanditiis nobis ea soluta eius sunt eum, enim, quas sint labore voluptates repudiandae saepe eaque!</p>
+          </div>
+          <div class="border-top"></div>
+        <div  class="container mt-3" style="display: grid; grid-template-columns: 50% 50%; height: 100px;">
+    
+          <div>
+            <i class="fas fa-map-marker-alt"></i>
+            <small class="pl-2">Crn Tyala and Hulana</small><br>
+            <small class="pl-4">Direction </small>
+          </div>
+    
+          <div>
+            <i class="fas fa-phone-alt"></i><small class="pl-2">07 93393939 </small> 
+          </div>
 
-  <ion-card class="card">
-    <img src="..//..//assets/images.SMME1.jfif" />
-    <ion-card-header>
-      <ion-card-subtitle>
-        SMME Centre
-      </ion-card-subtitle>
-      <ion-card-title>mLab</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
+          <div>
+            <i class="fas fa-envelope-open"></i> <small class="pl-2"> lebo@gmail.com </small>
+          </div>
 
-      <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, cum cumque vitae deserunt alias delectus
-        blanditiis nobis ea soluta eius sunt eum, enim, quas sint labore voluptates repudiandae saepe eaque!</p>
-    </ion-card-content>
 
-    <div >
-        <ion-button class="btn"  [routerLink] = "'/veiw-report'">Direction</ion-button>
-        <ion-button  class="btn" [routerLink] = "'/forms'" >Book Now</ion-button> 
+          <div>
+            <button type="button" class="btn btn-outline-secondary"  [routerLink]="'/forms'">Book now</button>
+          </div>
+       
+        </div>
 
+       
+      </div>
     </div>
-  </ion-card>
+      
+  </ion-list>
+
 
 
 

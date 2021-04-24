@@ -1,36 +1,46 @@
-<ion-header >
-  <ion-toolbar   color="success">
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/facility-booking/"></ion-back-button>
-    </ion-buttons>
-    <ion-title  style="text-align: center;">MAYIBUYE</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-
-
-  <ion-card class="card">
-    <img src="..//..//assets/images.Mayibuye.jfif"  style="height: 60%;" />
-    <ion-card-header>
-      <ion-card-subtitle>
-        Arts
-      </ion-card-subtitle>
-      <ion-card-title>Mayibuye Multipurpose Arts Center</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-
-      <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, cum cumque vitae deserunt alias delectus
-        blanditiis nobis ea soluta eius sunt eum, enim, quas sint labore voluptates repudiandae saepe eaque!</p>
-    </ion-card-content>
-
-    <div >
-        <ion-button class="btn" [routerLink] = "'/veiw-report'" >Direction</ion-button>
-        <ion-button  class="btn" [routerLink] = "'/forms'" >Book Now</ion-button> 
-
+<ion-content style="height: 100%">
+  <ion-list>
+    <div class="m-1" style="height: 100%">
+      <div class="card" style="width: 25rem; height: 100%">
+        <img src="{{data.center_image}}" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">{{data.center_name}}</h5>
+          <h3>Description</h3>
+          <p class="ml-0">{{data.center_description}}</p>
+        </div>
+        <div class="border-top"></div>
+        <div
+          class="container mt-3"
+          style="
+            display: grid;
+            grid-template-columns: 50% 50%;
+            gap: 12px;
+            height: 100%;
+          "
+        >
+          <div>
+            <i class="fas fa-map-marker-alt"></i>
+            <small class="pl-2">{{data.center_location}}</small><br />
+          </div>
+          <div class="ml-2">
+            <i class="fas fa-phone-alt"></i
+            ><small class="pl-2">{{data.center_number}} </small>
+          </div>
+          <div class="">
+            <i class="fas fa-envelope-open"></i>
+            <small class="pl-2"> {{data.center_email}} </small>
+          </div>
+          <div class="ml-2">
+            <button
+              type="button"
+              class="btn btn-outline-secondary"
+              [routerLink]="'/forms'"
+            >
+              Book now
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
-  </ion-card>
-
-
-
+  </ion-list>
 </ion-content>

@@ -7,7 +7,7 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: '',
+    path: 'home',
     redirectTo: 'home',
     pathMatch: 'full'
   },
@@ -51,6 +51,15 @@ const routes: Routes = [
     path: 'bookings4',
     loadChildren: () => import('./bookings4/bookings4.module').then( m => m.Bookings4PageModule)
   },
+  {
+    path: '',
+    loadChildren: () => import('./onboarding/onboarding.module').then( m => m.OnboardingPageModule)
+  },  {
+    path: 'viewcase',
+    loadChildren: () => import('./viewcase/viewcase.module').then( m => m.ViewcasePageModule)
+  },
+
+
 ];
 
 @NgModule({

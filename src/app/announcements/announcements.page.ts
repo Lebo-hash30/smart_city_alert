@@ -15,11 +15,13 @@ export class AnnouncementsPage implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.getAnnouncement();
   }
 
-  makeBookings(){
+  getAnnouncement(){
     this.firebase.getannoucements().then((items:any)=>{
       this.announcement = items;
+      console.log(this.announcement)
       
     })
   }    

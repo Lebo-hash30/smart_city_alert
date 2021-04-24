@@ -1,0 +1,60 @@
+<ion-header> </ion-header>
+
+<ion-content class="ion-padding">
+  <ion-slides pager="true">
+    <ion-slide class="ion-padding">
+      <img
+        src="https://blush.design/api/download?shareUri=yO1kz9LJre5E1vv2&c=Skin_0%7E583318-0.1%7Ec68e80&w=800&h=800&fm=png"
+     style="height: 250px;" />
+
+      <div class="slider-text">
+        <h2>REPORT ISSUES</h2>
+
+        <p>
+          Quick and easy way to report a municipal issue Spot an issue, take a
+          photo and Send!
+        </p>
+      </div>
+
+      <div class="navigator">
+        <ion-button color="primary" fill="clear" (click)="skip()"
+          >Prev</ion-button
+        >
+        <ion-button color="primary" fill="clear" (click)="next()"
+          >NEXT</ion-button
+        >
+      </div>
+    </ion-slide>
+    <ion-slide class="ion-padding">
+      <img  style="height: 250px;"
+        src="https://blush.design/api/download?shareUri=iLRbQQJut3rYsPRo&c=Clothing_0%7Eff8333-0.2%7Effc81a-0.3.0.0.2.0%7Eff8333&w=800&h=800&fm=png"
+      />
+
+      <div class="slider-text">
+        <h2>STAY INFORMED </h2>
+
+        <p>Get the latest reported cases, within a specific areas near you.</p>
+      </div>
+
+      <div class="navigator">
+        <ion-button color="primary" fill="clear" (click)="skip()"
+          >Prev</ion-button
+        >
+        <ion-button color="primary" fill="clear" (click)="next()"
+          >NEXT</ion-button
+        >
+      </div>
+    </ion-slide>
+    <ion-slide class="ion-padding">
+      <img src="..//../assets/Tech Life - Communication.png"  style="height: 250px;" />
+
+      <div class="slider-text">
+        <h2>EASY ACCESS </h2>
+
+        <p>Booking government facilities fast and quick  at the touch of a button </p>
+      </div>
+
+      <ion-button color="danger" [routerLink]="'/home'">GET STARTED</ion-button>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

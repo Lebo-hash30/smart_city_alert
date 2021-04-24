@@ -1,67 +1,57 @@
 <ion-header>
-  <ion-toolbar color="success" >
-    <ion-title  style="text-align: center;">Forms</ion-title>
+  <ion-toolbar>
+    <ion-title style="text-align: center">Fill in the Forms</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content  >
-
-  <ion-card >
-     
-
-    <!-- <div   >
-
-      <div class="mt-2 ml-2 mr-2" style="display: flex; justify-content: space-between;">
-  
-        <input type="text" placeholder="Names" maxlength="30" [(ngModel)]="Names" >
-        <input type="text" placeholder="Surname" maxlength="30"  [(ngModel)]="Surname">
-      </div>
-  
-      <div class="mt-2 ml-2"  style="display: flex; justify-content: space-between;">
-        <input type="date" placeholder="FROM" [(ngModel)]="date">
-        <input type="date" placeholder="TO"  [(ngModel)]="date">
-  
-      </div>
-
-  
-      <div class="form-group">
-  
-        <button type="submit" class="btn btn-secondary mt-3 ml-5" (click)="bookings()"
-          style="margin-right: 15%; margin-top: 15%; background-color:#21bf73; border: none; width: 75%; ">BOOK</button>
-  
-      </div>
-  
-    </div>   -->
-
-
+<ion-content>
+  <div class="container mt-5">
+  <div class="card ">
     <div class="container">
       <div class="form-row">
         <div class="form-group col-md-6">
-          <label  style="color: rgb(47, 79, 63); font-weight: bolder">Name</label>
-          <input type="text" class="form-control"  [(ngModel)]="name">
+          <label class="pt-3" style="color: rgb(47, 79, 63); font-weight: bolder"
+            >Name</label
+          >
+          <input type="text" class="form-control" [(ngModel)]="name" />
         </div>
         <div class="form-group col-md-6">
-          <label style="color: rgb(47, 79, 63); font-weight: bolder" >Email</label>
-          <input type="email" class="form-control" [(ngModel)]="email">
+          <label style="color: rgb(47, 79, 63); font-weight: bolder"
+            >Email</label
+          >
+          <input type="email" class="form-control" [(ngModel)]="email" />
         </div>
 
         <div class="form-group col-md-6">
-          <label  style="color: rgb(47, 79, 63); font-weight: bolder">Cell phone</label>
-          <input type="tel" class="form-control" maxlength="10" [(ngModel)]="cell">
+          <label style="color: rgb(47, 79, 63); font-weight: bolder"
+            >Cell phone</label
+          >
+          <input
+            type="tel"
+            class="form-control"
+            maxlength="10"
+            [(ngModel)]="cell"
+          />
         </div>
       </div>
       <div class="form-group">
-        <label  style="color: rgb(47, 79, 63); font-weight: bolder">Start date</label>
-        <input type="date" class="form-control"  [(ngModel)]="dateS">
+        <label style="color: rgb(47, 79, 63); font-weight: bolder"
+          >Start date</label
+        >
+        <input type="date" class="form-control" [(ngModel)]="dateS" />
       </div>
       <div class="form-group">
-        <label  style="color: rgb(47, 79, 63); font-weight: bolder">End date</label>
-        <input type="date" class="form-control" [(ngModel)]="dateE">
+        <label style="color: rgb(47, 79, 63); font-weight: bolder"
+          >End date</label
+        >
+        <input type="date" class="form-control" [(ngModel)]="dateE" />
       </div>
 
       <div class="form-group">
-        <label  style="color: rgb(47, 79, 63); font-weight: bolder">Number of People</label>
-        <input type="number" class="form-control"  [(ngModel)]="number">
+        <label style="color: rgb(47, 79, 63); font-weight: bolder"
+          >Number of People</label
+        >
+        <input type="number" class="form-control" [(ngModel)]="number" />
 
         <ion-list>
           <ion-list-header>
@@ -69,23 +59,22 @@
               Description
             </ion-label>
           </ion-list-header>
-        
 
-          <textarea class="form-control " placeholder="Please provide add description to let us better understand your reason for booking this facility" [(ngModel)]="description"></textarea>
+          <textarea
+            class="form-control"
+            placeholder="Please provide add description to let us better understand your reason for booking this facility"
+            [(ngModel)]="description"
+          ></textarea>
         </ion-list>
-      
-        
       </div>
 
-      
-     
-      <div style="display: flex; justify-content: center; padding-bottom: 10px">
-        <ion-button (click)="makeBookings()" color="success"  [routerLink] = "'/home'">BOOK</ion-button>
-      </div>
-       
-
+      <button (click)="makeBookings()" class="btn mb-3" >BOOK</button>
     </div>
 
+    </div>
+    
+      
+  </div>
 
-  </ion-card>
+  
 </ion-content>

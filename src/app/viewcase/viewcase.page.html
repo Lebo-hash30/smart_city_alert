@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/facility-booking/"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="text-align: center"></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <div class="container mt-3">
+      <div class="card" style="width: 20rem">
+        <img src="../../assets/download.jpeg" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <h3>Description</h3>
+          <p>{{data.comment}}</p>
+        </div>
+        <div class="border-top"></div>
+        <div
+          class="container mt-3"
+          style="display: grid; grid-template-columns: 50% 50%; height: 100px"
+        >
+          <div><small class="pl-2">{{data.severity}}</small><br /></div>
+          <div>
+            <small class="pl-2"> {{data.duration}}</small>
+          </div>
+          <div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-list>
+</ion-content>

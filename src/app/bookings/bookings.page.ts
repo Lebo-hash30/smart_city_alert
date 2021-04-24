@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-bookings',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bookings.page.scss'],
 })
 export class BookingsPage implements OnInit {
-
-  constructor() { }
+  data:any
+  constructor(public router: Router) { 
+   
+  }
 
   ngOnInit() {
+    this.data =this.router.getCurrentNavigation().extras.state;
+    console.log(this.data)
+
   }
 
 }

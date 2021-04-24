@@ -1,22 +1,20 @@
 <ion-header>
-  <ion-toolbar color="success">
+  <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/home"></ion-back-button>
-    </ion-buttons> 
-    <ion-title  style="text-align: center;">Report case</ion-title>
+    </ion-buttons>
+    <ion-title style="text-align: center">Report case</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content >
-  <div *ngIf="problems" >
-    <ion-item>
-      <h3 style="text-align: center">What problems are you facing ?</h3>
-    </ion-item>
+<ion-content>
+  <div *ngIf="problems" class="mt-5">
+    <h3 style="text-align: center">What problems are you facing ?</h3>
 
     <div class="services">
-      <div class="services_content" (click)="services('Water pipe burst')" >
-        <i class="fas fa-exclamation-triangle"></i>
-        <h6>Water pipe burst</h6>
+      <div class="services_content" (click)="services('Water pipe burst')">
+        <i class="fas fa-tint-slash"></i>
+        <h6>Pipe burst</h6>
       </div>
 
       <div class="services_content" (click)="services('Sewerage')">
@@ -25,20 +23,19 @@
       </div>
 
       <div class="services_content" (click)="services('Electrical issues')">
-        <i class="fas fa-exclamation-triangle"></i>
+        <i class="fas fa-charging-station"></i>
         <h6>Electrical</h6>
       </div>
 
       <div class="services_content" (click)="services('Potholes')">
-        <i class="fas fa-exclamation-triangle"></i>
+        <i class="fas fa-car-crash"></i>
         <h6>Potholes</h6>
       </div>
 
       <div class="services_content" (click)="services('Illegal dumping')">
-        <i class="fas fa-exclamation-triangle"></i>
+        <i class="fas fa-dumpster-fire"></i>
         <h6>Illegal dumping</h6>
       </div>
-
     </div>
   </div>
 
@@ -60,22 +57,35 @@
     <ion-item (click)="severe('Low')"> Low </ion-item>
   </div>
 
-  <div class="mb-3"  *ngIf="comment" class="content">
-    <textarea  [(ngModel)]="description"
+  <div class=" container mb-3" *ngIf="comment" class="content">
+
+   <img src="../../assets/">
+    <textarea
+      [(ngModel)]="description"
       class="form-control"
       placeholder="Please provide additional comment to let us better understand the isseus"
       required
     ></textarea>
 
-    <ion-button (click)="submitReport()">Submit report </ion-button>
-
+   
+    <br>  
     <!-- fab placed to the (vertical) center and start -->
-    <ion-fab vertical="center" horizontal="end" slot="fixed" (click)="takePicture()" >
-      <ion-fab-button>
+    <ion-fab
+      
+      (click)="takePicture()"
+    
+    >
+
+    
+      <ion-fab-button color="danger">
         <ion-icon name="camera"></ion-icon>
       </ion-fab-button>
     </ion-fab>
+    <br>  <br>   <br>
+    <ion-progress-bar value={{progressBarIndicator}}  color="secondary"  buffer="0.5" style="width:70%;" *ngIf=" hideProgressBarIndicator"></ion-progress-bar>
+  <br>   
+    <ion-button (click)="submitReport()" color="danger">Submit report </ion-button>
   </div>
 
-
+ 
 </ion-content>

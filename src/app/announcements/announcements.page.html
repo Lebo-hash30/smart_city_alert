@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar  color="success">
+  <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/home"></ion-back-button>
     </ion-buttons>
@@ -8,17 +8,28 @@
 </ion-header>
 
 <ion-content >
+<div class="container mt-3">
+  <div class="card mt-3" *ngFor="let announcement of  announcement">
+    <ion-card-subtitle style="text-align: center;">
+      {{announcement.title}}
+      <ion-card-title>
+        {{announcement.description}}
+      </ion-card-title>
+    </ion-card-subtitle>
+    <ion-card-content>
+     {{announcement.area}}
 
-  <ion-card class="card">
-      <ion-card-subtitle style="text-align: center;">
-          Water shedding
-        <ion-card-title>
-          Galeshewe
-        </ion-card-title>
-      </ion-card-subtitle>
-      <ion-card-content>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum animi rem expedita vero voluptates perspiciatis ab mollitia velit doloribus recusandae eligendi, impedit inventore libero delectus nulla reiciendis et totam iure!
-      </ion-card-content>
-  </ion-card>
+     <div class="mt-3" style="display:flex;justify-content:space-between">
+       <div>
+        <small>{{announcement.department}}</small>
+       </div> 
+       <div>
+        <small>{{announcement.announcer}}</small>
+       </div>
+     </div>
+    </ion-card-content>
+  </div>
+</div>
+  
 
 </ion-content>

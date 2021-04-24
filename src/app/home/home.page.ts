@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { Plugins, CameraResultType } from "@capacitor/core";
 const { Camera } = Plugins;
 
+import {ProblemsService} from '../problems.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: "app-home",
@@ -9,15 +12,29 @@ const { Camera } = Plugins;
   styleUrls: ["home.page.scss"],
 })
 export class HomePage {
-  constructor() {
+  facilities:any;
+  issues:any;
+  constructor(public data:ProblemsService, public router :Router) {
+    this.data.getFacilities().then((items:any)=>{
+      this.facilities =items;
+      console.log(items);
+    }) 
     
+    
+    this.getIssues()
   }
+  
   image;
 
   slideOpts = {
     initialSlide: 0,
     slidesPerView: 2,
   };
+
+  slideServices ={
+    initialSlide: 0,
+    slidesPerView: 3,
+  }
 
   async takePicture() {
     const image = await Camera.getPhoto({
@@ -33,6 +50,18 @@ export class HomePage {
     // Can be set to the src of an image now
     this.image = imageUrl;
   }
+  viewcase(issues){
+    this.router.navigateByUrl('/viewcase', {state:issues})
+  }
+  viewMore(facility){
+    this.router.navigateByUrl('/bookings', {state:facility})
+  }
 
- 
+  getIssues(){
+    this.data.getProblem().then((items)=>{
+      this.issues=items;
+      console.log(this.issues)
+
+    })
+  }
 }

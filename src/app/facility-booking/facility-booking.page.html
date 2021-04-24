@@ -1,131 +1,34 @@
 <ion-header>
-  <ion-toolbar color="success">
+  <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/home"></ion-back-button>
-    </ion-buttons>  
-    <ion-title style="text-align: center;">Booking Facility</ion-title>
+    </ion-buttons>
+    <ion-title style="text-align: center">Facilities</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
-
-  <div  class="mt-3">
-    <div class=" card cardContent">
-      <div>
-        <img src="..//..//assets/download.Mayibuye.jfif" style="width: 250px;"/>
-      </div>
-
-      <div >
-        <h5 class="card-title">Mayibuye Arts Centre</h5>
-        
-      <small>Lorem ipsum dolor sit amet consectetur adipisicing ...</small>
-        <div style="display: flex; justify-content: space-between;">
-          <div>
-            <h6>Hulana</h6>
-          </div>
-          <div  [routerLink] = "'/bookings'">
-            <ion-button class="btn"  color="success">View Inside</ion-button>
-          </div>
+  <div class="container mb-5">
+    <div class=" mt-3" *ngFor="let facility of facilities">
+      <div class="card cardContent"  (click)="viewMore(facility)">
+        <div>
+          <img src={{facility.center_image}} style="width: 200px" />
         </div>
-      
-      </div>
-    </div>
-  </div>
-
-  <div  class="mt-3">
-    <div class=" card cardContent">
-      <div>
-        <img src="..//..//assets/download.William.jfif" style="width: 250px;"/>
-      </div>
-
-      <div >
-        <h5 class="card-title">William Humphrey Art Centre </h5>
-        
-      <small>Lorem ipsum dolor sit amet consectetur adipisicing ...</small>
-        <div style="display: flex; justify-content: space-between;">
-          <div>
-            <h6>Kimberley</h6>
-          </div>
-          <div  [routerLink] = "'/bookings1'">
-            <ion-button class="btn"  color="success">View Inside</ion-button>
-          </div>
-        </div>
-      
-      </div>
-    </div>
-  </div>
-
-  <div  class="mt-3">
-    <div class=" card cardContent">
-      <div>
-        <img src="..//..//assets/images.SMME.jfif" style="width: 250px;"/>
-      </div>
-
-      <div >
-        <h5 class="card-title">SMME Village</h5>
-        
-      <small>Lorem ipsum dolor sit amet consectetur adipisicing ...</small>
-        <div style="display: flex; justify-content: space-between;">
-          <div>
-            <h6>Hulana</h6>
-          </div>
-          <div  [routerLink] = "'/bookings2'">
-            <ion-button class="btn"  color="success">View Inside</ion-button>
-          </div>
-        </div>
-      
-      </div>
-    </div>
-  </div>
-
-  <div  class="mt-3">
-    <div class=" card cardContent">
-      <div>
-        <img src="..//..//assets/the-wildebeest-kuil-rock-art-centre-1.jpg" style="width: 250px;"/>
-      </div>
-
-      <div >
-        <h5 class="card-title">WildeBeest Kuil Arts Centre</h5>
-        
-      <small>Lorem ipsum dolor sit amet consectetur adipisicing ...</small>
-        <div style="display: flex; justify-content: space-between;">
-          <div>
-            <h6>Platfontein</h6>
-          </div>
-          <div  [routerLink] = "'/bookings3'">
-            <ion-button class="btn"  color="success">View Inside</ion-button>
-          </div>
-        </div>
-      
-      </div>
-    </div>
-  </div>
-
-  <div  class="mt-3">
-    <div class=" card cardContent">
-      <div>
-        <img src="..//..//assets/images.ncSMME.jfif" style="width: 250px;"/>
-      </div>
-
-      <div >
-        <h5 class="card-title">Northern-Cape SMME</h5>
-        
-      <small>Lorem ipsum dolor sit amet consectetur adipisicing ...</small>
-        <div style="display: flex; justify-content: space-between;">
-          <div>
-            <h6>Floors</h6>
-          </div>
-          <div  [routerLink] = "'/bookings4'">
-            <ion-button class="btn"  color="success">View Inside</ion-button>
-          </div>
-        </div>
-      
-      </div>
-    </div>
-  </div>
- 
-
-
-
   
+        <div>
+          <h5 class="card-title">{{facility.center_name}}</h5>
+  
+          <div style="display: flex; justify-content: space-between">
+            <div>
+              <small>{{facility.center_location}}</small>
+            </div>
+            <div >
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>
 </ion-content>
+
